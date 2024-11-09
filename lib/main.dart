@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,66 +12,45 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.deepPurpleAccent,
-          title: const Text('My Flutter App'),
+          backgroundColor: const Color.fromARGB(255, 103, 174, 192),
+          title: const Text('My Flutter App',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              )),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Text Widget
-              const Text(
-                'Hello  World!',
-                style: TextStyle(fontSize: 24, color: Colors.indigo),
+        body: Stack(
+          children: [
+            // Imagen de fondo
+            Positioned.fill(
+              child: Image.asset(
+                'assets/images/background.jpg',
+                fit: BoxFit.cover,
               ),
+            ),
 
-              // Container Widget
-              Container(
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(20),
-                color: Colors.deepPurple[100],
-                child: const Text('Estoy en un contenedor'),
-              ),
-
-              // Row Widget
-              Row(
+            // Contenido principal
+            const Center(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    color: Colors.red,
-                    padding: const EdgeInsets.all(10),
-                    child: const Text('Row 1'),
+                  Text(
+                    'Aplicacion de Flutter',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                  const SizedBox(width: 20),
-                  Container(
-                    color: Colors.green,
-                    padding: const EdgeInsets.all(10),
-                    child: const Text('Row 2'),
-                  ),
-                ],
-              ),
-
-              // Stack Widget
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Container(
-                    width: 200,
-                    height: 200,
-                    margin: const EdgeInsets.only(top: 20),
-                    color: Colors.blueAccent,
-                  ),
-                  const Positioned(
-                    top: 50,
-                    child: Text(
-                      'Stacked Text',
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                  SizedBox(height: 20),
+                  Text(
+                    '¡Bienvenido a la aplicación!',
+                    style: TextStyle(
+                      fontSize: 24,
                     ),
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
