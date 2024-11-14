@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:crypto/crypto.dart'; // Asegúrate de importar el paquete crypto
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart'; // Importa flutter_dotenv
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env"); // Carga las variables de entorno
   runApp(const MyApp());
 }
 
@@ -18,9 +21,8 @@ class _MyAppState extends State<MyApp> {
   String apiResponse = '';
 
   // Reemplaza estos valores con tus propias claves
-  final String publicKey = 'af519fae84fa8ac473c02331d4de6d0b';
-  final String privateKey =
-      '0c677a8885006ae695f75054dc1e948fed9509a2'; // Tu clave privada
+  final String publicKey = dotenv.env['PUBLIC_KEY'] ?? '';
+  final String privateKey = dotenv.env['PRIVATE_KEY'] ?? '';
 
   Future<void> fetchMarvelData() async {
     final String ts = DateTime.now().millisecondsSinceEpoch.toString();
