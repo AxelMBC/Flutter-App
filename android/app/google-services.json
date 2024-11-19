@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "256391070321",
+    "project_id": "catalogo-peliculas-928f2",
+    "storage_bucket": "catalogo-peliculas-928f2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256391070321:android:6dc1d478573359094111d0",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6MxJ3NPnKiHIuFLAFeJGpGhCe3hzr038"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256391070321:android:4c05952f40ae340e4111d0",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6MxJ3NPnKiHIuFLAFeJGpGhCe3hzr038"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
